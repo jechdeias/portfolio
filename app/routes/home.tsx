@@ -6,7 +6,6 @@ import About from "~/components/sections/About";
 import Skills from "~/components/sections/Skills";
 import Projects from "~/components/sections/Projects";
 import Certifications from "~/components/sections/Certifications";
-import Lab from "~/components/sections/Lab";
 import Timeline from "~/components/sections/Timeline";
 import Contact from "~/components/sections/Contact";
 import BotanicalDivider from "~/components/ui/BotanicalDivider";
@@ -33,8 +32,6 @@ export default function Home() {
         <Projects />
         <BotanicalDivider />
         <Certifications />
-        <BotanicalDivider />
-        <Lab />
         <BotanicalDivider />
         <Timeline />
         <Contact />

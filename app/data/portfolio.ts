@@ -42,16 +42,6 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
-    id: "nini-ai",
-    title: "Nini AI Assistant",
-    description:
-      "A conversational AI companion app exploring natural language interaction patterns. Built as a series of iterative experiments to improve response quality and user experience.",
-    techStack: ["Flutter", "Dart", "Claude API"],
-    githubUrl: "https://github.com/jechdeias/nini-ai",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    featured: true,
-  },
-  {
     id: "portfolio-site",
     title: "This Portfolio",
     description:
