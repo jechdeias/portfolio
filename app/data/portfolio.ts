@@ -170,7 +170,7 @@ export const TIMELINE: TimelineEntry[] = [
 export const PERSONAL = {
   name: "Jehdeiah Shane G. Par",
   tagline: "I build things that work beautifully — and feel human.",
-  email: "jehdeiahshane@gmail.com",
+  email: "jedeyuuuuuh@gmail.com",
   github: "https://github.com/jechdeias",
   linkedin: "https://www.linkedin.com/in/jehdeiah-shane-par-4a8504314/",
   bio: `I'm a computer engineering student with a soft spot for elegant interfaces and systems that feel inevitable once you see them. When I'm not debugging at midnight, I'm reading about design, experimenting with new tools, or tending to a small collection of houseplants.
