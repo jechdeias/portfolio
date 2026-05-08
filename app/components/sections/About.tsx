@@ -7,17 +7,12 @@ export default function About() {
       <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-center">
         {/* Avatar placeholder */}
         <div className="flex justify-center md:justify-start">
-          <div
-            className="w-48 h-48 rounded-full flex items-center justify-center text-5xl select-none"
-            style={{
-              background:
-                "linear-gradient(135deg, var(--color-sage-light) 0%, var(--color-parchment-dark) 100%)",
-              border: "2px solid var(--color-sage-light)",
-            }}
-            aria-label="Avatar"
-          >
-            🌿
-          </div>
+          <img
+            src="/me.png"
+            alt="Jehdeiah Shane G. Par"
+            className="w-48 h-48 rounded-full object-cover"
+            style={{ border: "2px solid var(--color-sage-light)" }}
+          />
         </div>
 
         {/* Bio */}

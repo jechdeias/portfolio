@@ -174,7 +174,7 @@ export const PERSONAL = {
   email: "jehdeiahshane@gmail.com",
   github: "https://github.com/yourusername",
   linkedin: "https://linkedin.com/in/yourprofile",
-  bio: `I'm a computer science student with a soft spot for elegant interfaces and systems that feel inevitable once you see them. When I'm not debugging at midnight, I'm reading about design, experimenting with new tools, or tending to a small collection of houseplants.
+  bio: `I'm a computer engineering student with a soft spot for elegant interfaces and systems that feel inevitable once you see them. When I'm not debugging at midnight, I'm reading about design, experimenting with new tools, or tending to a small collection of houseplants.
 
 I believe good software is a lot like good writing — it should be clear, considered, and a little bit surprising. I'm always looking for projects where I can bring that sensibility to life.`,
 };
