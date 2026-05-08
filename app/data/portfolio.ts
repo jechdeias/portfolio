@@ -140,30 +140,12 @@ export const LAB_EXPERIMENTS: LabExperiment[] = [
 export const TIMELINE: TimelineEntry[] = [
   {
     org: "University Computer Society",
-    role: "Web Development Lead",
+    role: "Web Development Team Member",
     type: "org",
     startDate: "Aug 2024",
     endDate: "Present",
     description:
-      "Leading a team of student developers building internal tools and organizing workshops on modern web technologies for club members.",
-  },
-  {
-    org: "Local Tech Startup",
-    role: "Software Development Intern",
-    type: "internship",
-    startDate: "Jun 2024",
-    endDate: "Aug 2024",
-    description:
-      "Contributed to the frontend of a SaaS dashboard, implementing data visualization components and improving mobile responsiveness across the platform.",
-  },
-  {
-    org: "Community Coding Bootcamp",
-    role: "Volunteer Instructor",
-    type: "volunteer",
-    startDate: "Jan 2024",
-    endDate: "May 2024",
-    description:
-      "Taught introductory Python and web development to high school students from underrepresented communities, mentoring 20+ learners through their first projects.",
+      "Part of a team working on web development projects as part of a course, collaborating with fellow students to build and ship features.",
   },
 ];
 
