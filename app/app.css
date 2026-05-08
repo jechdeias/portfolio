@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-display: "Cormorant Garamond", "Georgia", ui-serif, serif;
+  --font-sans: "EB Garamond", "Georgia", ui-serif, serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+  /* Anne with an E / Moonlit Cabin Palette */
+  --color-parchment: #f4ede0;
+  --color-parchment-dark: #ede5d0;
+  --color-ink: #1e1a14;
+  --color-ink-muted: #5a4a35;
+  --color-sage: #7d9b76;
+  --color-sage-light: #a8c4a2;
+  --color-sage-dark: #4f6b49;
+  --color-forest: #3d5c3a;
+  --color-amber: #c9862a;
+  --color-amber-light: #e8a84a;
+  --color-moon: #e8e4d8;
+  --color-berry: #b5616a;
+  --color-night: #1a1a2e;
+  --color-linen: #ede5d0;
+  /* legacy aliases */
+  --color-rose: #b5616a;
+  --color-terracotta: #c9862a;
+  --color-terracotta-light: #e8a84a;
+}
+
+html,
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+/* Linen noise texture — felt, not seen */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+/* Offset for sticky nav */
+[id] {
+  scroll-margin-top: 5rem;
+}
+
+::selection {
+  background-color: var(--color-sage-light);
+  color: var(--color-ink);
+}
+
+/* ── Scroll Reveal ─────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delays for card grids */
+.stagger-1 { transition-delay: 0ms; }
+.stagger-2 { transition-delay: 100ms; }
+.stagger-3 { transition-delay: 200ms; }
+.stagger-4 { transition-delay: 300ms; }
+.stagger-5 { transition-delay: 400ms; }
+.stagger-6 { transition-delay: 500ms; }
+.stagger-7 { transition-delay: 600ms; }
+.stagger-8 { transition-delay: 700ms; }
+.stagger-9 { transition-delay: 800ms; }
+
+/* Reveal children when the parent section becomes visible */
+.reveal.visible .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero stagger */
+.hero-name   { opacity: 0; transform: translateY(1rem); animation: fadeUp 0.7s ease-out 0.1s forwards; }
+.hero-tagline { opacity: 0; transform: translateY(1rem); animation: fadeUp 0.7s ease-out 0.35s forwards; }
+.hero-buttons { opacity: 0; transform: translateY(1rem); animation: fadeUp 0.7s ease-out 0.6s forwards; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Botanical Draw-in ─────────────────────────────── */
+.botanical-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: stroke-dashoffset 1.4s ease-out;
+}
+.botanical-path.drawn {
+  stroke-dashoffset: 0;
+}
+.botanical-dot {
+  opacity: 0;
+  transition: opacity 0.4s ease-out 0.8s;
+}
+.botanical-dot.drawn {
+  opacity: 1;
+}
+
+/* ── Timeline dot pulse ────────────────────────────── */
+@keyframes pulse-once {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.6); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.dot-pulse {
+  animation: pulse-once 0.6s ease-out forwards;
+}
+
+/* ── Button fill sweep ─────────────────────────────── */
+.btn-sweep {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sweep::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+.btn-sweep:hover::before {
+  transform: translateX(0);
+}
+
+/* ── Nav link underline slide ──────────────────────── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--color-sage);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+.nav-link.active {
+  color: var(--color-sage-dark);
+}
+
+/* ── Project card tilt on hover ────────────────────── */
+.card-tilt {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-tilt:hover {
+  transform: perspective(800px) rotateY(2deg) translateY(-5px);
+  box-shadow: 0 12px 32px rgba(28, 28, 28, 0.1);
+}
+
+/* ── Ivy sparkle burst ─────────────────────────────── */
+@keyframes ivy-sparkle {
+  0%   { transform: scale(0) rotate(0deg);    opacity: 0; }
+  22%  { transform: scale(1.4) rotate(22deg); opacity: 1; }
+  62%  { transform: scale(1)   rotate(52deg); opacity: 0.55; }
+  100% { transform: scale(0)   rotate(88deg); opacity: 0; }
+}
+.ivy-sparkle {
+  position: absolute;
+  pointer-events: none;
+  animation: ivy-sparkle 1.7s ease-out forwards;
+  transform-origin: center;
+}
+
+/* ── Star twinkle ──────────────────────────────────── */
+@keyframes star-twinkle {
+  0%, 100% { opacity: var(--s-op, 0.6); }
+  50%       { opacity: calc(var(--s-op, 0.6) * 0.25); }
+}
+.star-twinkle {
+  animation: star-twinkle var(--s-dur, 3s) ease-in-out infinite;
+  animation-delay: var(--s-delay, 0s);
+}
+
+/* ── Moon halo breathe ─────────────────────────────── */
+@keyframes moon-breathe {
+  0%, 100% { opacity: 0.22; r: 68; }
+  50%       { opacity: 0.4;  r: 75; }
+}
+.moon-halo {
+  animation: moon-breathe 8s ease-in-out infinite;
+}
+
+/* ── Ivy leaf grow-in ──────────────────────────────── */
+.ivy-leaf-enter {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  transform: scale(0);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.ivy-leaf-enter.grown {
+  transform: scale(1);
+}
+
+/* ── Hero section ──────────────────────────────────── */
+.hero-section {
+  background: var(--color-night);
+}
+
+.hero-moon {
+  position: absolute;
+  inset-block-start: 6%;
+  inset-inline-end: 8%;
+  inline-size: clamp(90px, 14vw, 190px);
+  block-size: auto;
+  pointer-events: none;
+}
+
+.hero-fade {
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  inline-size: 100%;
+  block-size: 18vh;
+  pointer-events: none;
+  z-index: 30;
+  background: linear-gradient(to bottom, transparent, var(--color-parchment));
+}
+
+.hero-name-text {
+  color: #f0ebe0;
+  font-family: var(--font-display);
+}
+
+.hero-tagline-text {
+  color: #c8bfad;
+  font-family: var(--font-display);
+}
