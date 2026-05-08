@@ -33,6 +33,15 @@ export const PROJECTS: Project[] = [
     featured: true,
   },
   {
+    id: "sta-cruz-hotels",
+    title: "Sta Cruz Hotels Booking App",
+    description:
+      "A hotel booking mobile app for Sta Cruz, featuring room browsing, availability checking, and seamless reservation management for guests and hotel staff.",
+    techStack: ["Flutter", "Firebase", "NoSQL"],
+    videoUrl: "https://www.youtube.com/embed/B02Dz8nC6Zo",
+    featured: true,
+  },
+  {
     id: "nini-ai",
     title: "Nini AI Assistant",
     description:
